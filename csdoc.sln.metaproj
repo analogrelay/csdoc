@@ -8,15 +8,15 @@
     <MSBuildRuntimeVersion>4.0.30319</MSBuildRuntimeVersion>
     <SDK40ToolsPath />
     <AspNetConfiguration>Debug</AspNetConfiguration>
-    <SolutionDir>C:\Code\Git\aspnet\NetDoc\</SolutionDir>
+    <SolutionDir>C:\Code\Git\csdoc\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
-    <SolutionFileName>NetDoc.sln</SolutionFileName>
-    <SolutionName>NetDoc</SolutionName>
-    <SolutionPath>C:\Code\Git\aspnet\NetDoc\NetDoc.sln</SolutionPath>
+    <SolutionFileName>csdoc.sln</SolutionFileName>
+    <SolutionName>csdoc</SolutionName>
+    <SolutionPath>C:\Code\Git\csdoc\csdoc.sln</SolutionPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{061BEF66-1145-4D31-A8A8-9004982195A8}" AbsolutePath="C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{061BEF66-1145-4D31-A8A8-9004982195A8}" AbsolutePath="C:\Code\Git\csdoc\src\csdoc\csdoc.kproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
@@ -27,7 +27,7 @@
       <Platform>Any CPU</Platform>
       <Content>
         <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{061BEF66-1145-4D31-A8A8-9004982195A8}" AbsolutePath="C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{061BEF66-1145-4D31-A8A8-9004982195A8}" AbsolutePath="C:\Code\Git\csdoc\src\csdoc\csdoc.kproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
@@ -36,13 +36,13 @@
       <Platform>Any CPU</Platform>
       <Content>
         <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{061BEF66-1145-4D31-A8A8-9004982195A8}" AbsolutePath="C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{061BEF66-1145-4D31-A8A8-9004982195A8}" AbsolutePath="C:\Code\Git\csdoc\src\csdoc\csdoc.kproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj">
+    <ProjectReference Include="C:\Code\Git\csdoc\src\csdoc\csdoc.kproj">
       <ToolsVersion>
       </ToolsVersion>
       <SkipNonexistentProjects>False</SkipNonexistentProjects>
@@ -77,20 +77,20 @@
   <Target Name="Publish">
     <MSBuild Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
   </Target>
-  <Target Name="src\NetDoc" Outputs="@(src_NetDocBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
-      <Output TaskParameter="TargetOutputs" ItemName="src_NetDocBuildOutput" />
+  <Target Name="src\csdoc" Outputs="@(src_csdocBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\csdoc\src\csdoc\csdoc.kproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="src_csdocBuildOutput" />
     </MSBuild>
   </Target>
-  <Target Name="src\NetDoc:Clean">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  <Target Name="src\csdoc:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\csdoc\src\csdoc\csdoc.kproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
-  <Target Name="src\NetDoc:Rebuild" Outputs="@(src_NetDocBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
-      <Output TaskParameter="TargetOutputs" ItemName="src_NetDocBuildOutput" />
+  <Target Name="src\csdoc:Rebuild" Outputs="@(src_csdocBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\csdoc\src\csdoc\csdoc.kproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="src_csdocBuildOutput" />
     </MSBuild>
   </Target>
-  <Target Name="src\NetDoc:Publish">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\aspnet\NetDoc\src\NetDoc\NetDoc.kproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  <Target Name="src\csdoc:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Code\Git\csdoc\src\csdoc\csdoc.kproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
 </Project>
